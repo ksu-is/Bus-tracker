@@ -43,3 +43,25 @@ if __name__ == "__main__":
 #time_remaining: Calculates the time remaining before the bus leaves.
 #get_student_distance: Simulates getting the student's current distance. Right now, it's set to 3 minutes, but this could be replaced by actual data.
 #main: Continuously checks if the bus should wait for the student, checking the time every minute.
+# List of students and how many minutes away they are
+students = {
+    "Alex": 2,
+    "Brianna": 4,
+    "Chris": 3,
+    "Dana": 1,
+    "Eli": 6
+}
+
+# Max wait time in minutes
+MAX_WAIT_TIME = 3
+
+# Check who the bus should wait for
+def check_students(students):
+    for name, minutes_away in students.items():
+        if minutes_away <= MAX_WAIT_TIME:
+            print(f"The bus will wait for {name} (they are {minutes_away} minutes away).")
+        else:
+            print(f"The bus will NOT wait for {name} (they are {minutes_away} minutes away).")
+
+# Run the check
+check_students(students)
